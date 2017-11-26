@@ -21,3 +21,5 @@ square1.random_color()
 print(square1)
 
 mainloop()
+
+
