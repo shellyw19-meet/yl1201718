@@ -32,7 +32,7 @@ class Person(object):
 		print("I am eating" + self.food +"! " + "I like it very much")
 
 person = Person("Omer", 16, "Jerusalem", "male", "fish")
-person.breakfast("Mekushkeshet")
+person.Breakfast("Mekushkeshet")
 
 
 

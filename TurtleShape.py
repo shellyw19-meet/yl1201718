@@ -10,16 +10,15 @@ for i in range(1):
  	turtle.pencolor("green")
  	turtle.forward(250)
  	turtle.right(144)
- 	turtle.pencolor("pink")
+ 	turtle.pencolor("gray")
  	turtle.forward(250)
  	turtle.right(144)
- 	turtle.pencolor("white")
+ 	turtle.pencolor("purple")
  	turtle.forward(250)
  	turtle.right(144)
  	turtle.pencolor("red")
  	turtle.forward(250)
  	turtle.right(144)
- 	turtle.pencolor("yellow")
 turtle.mainloop()
 
 

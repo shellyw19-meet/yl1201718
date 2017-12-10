@@ -19,10 +19,13 @@ ball2 = Ball(10,"yellow", 7)
 # 	distance = math.sqrt((math.pow(ball2.xcor()-ball1.xcor(),2) + math.pow(ball2.ycor()-ball1.ycor(),2)))
 
 def check_collision(ball1, ball2):
-	if ball1.shapesize() + ball2.shapesize() > math.sqrt((math.pow(ball2.xcor()-ball1.xcor()),2) + math.pow((ball2.ycor()-ball1.ycor()),2))
+	if (ball1.shapesize()[0]*10 + ball2.shapesize()[0]*10) >= (math.sqrt(((ball2.xcor()-ball1.xcor())**2) + ((ball2.ycor()-ball1.ycor())**2))):
+		print ("the balls are collising")
+	else:
+	 print ("There is no collising")
 
-	print ("the balls are collising")
-
-
+ball1.goto(100,20)
+ball2.goto(-149,3)
 check_collision(ball1,ball2)
 mainloop()
+
