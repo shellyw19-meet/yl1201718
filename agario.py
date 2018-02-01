@@ -93,24 +93,37 @@ def check_all_balls_collision():
 			ball_a.shapesize(ball_a.r/10)
 
 def check_myball_collision():
-	for 
+	for ball in BALLS:
+		if collide(MY_BALL, ball):
+			ball_radius = ball.r
+			my_ball_radius = MY_BALL.r
+			
+			if ball_radius > my_ball_radius:
+				return False
 
+			else:
+				ball.goto(x,y)
+				ball.dx = new_ball_dx
+				ball.dy = new_ball_dy
+				ball.r = new_ball_r
+				ball.color = new_ball_color
 
+				MY_BALL.r = MY_BALL.r + 1
 
+	return True
 
+def movearound(event):
+	MY_BALL.goto(event.x, event.y)
+	turtle.getcanvas().bind("<Motion>", movearound)
+	turtle.listen()
 
+while RUNNING == True:
+	if SCREEN_HEIGHT!=turtle.getcanvas().winfo_height()/2 or SCREEN_WIDTH!=turtle.getcanvas().winfo_width()/2:
+		SCREEN_WIDTH = turtle.getcanvas().winfo_width()/2
+		SCREEN_HEIGHT = turtle.getcanvas().winfo_height()/2
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	move_all_balls()
+	check_all_balls_collision()
+	
+	if check_myball_collision == False:
+		RUNNING = False
